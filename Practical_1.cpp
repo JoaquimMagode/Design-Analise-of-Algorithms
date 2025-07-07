@@ -1,29 +1,28 @@
-
+// Online C++ compiler to run C++ program online
 
 //Write a program to determine whwther numner is prime or not
 #include <iostream>
 
 int main() {
-    int number, i, flag = 0;
+    int n, i, count=0;
     std::cout << "Enter a number: ";
-    std::cin >> number;
+    std::cin >> n;
 
-    if (number <= 1) {
-        std::cout << number << " is not a prime number.";
+    if (n <= 1) {
+        std::cout << n << " is not a prime number.";
         return 0;
     }
 
-    for (i = 2; i * i <= number; ++i) {
-        if (number % i == 0) {
-            flag = 1;
-            break;
+    for (i = 1; i <= n; ++i) {
+        if (n % i == 0) {
+            count++;
         }
     }
 
-    if (flag == 0)
-        std::cout << number << " is a prime number.";
+    if (count == 2)
+        std::cout << n << " is a prime number.";
     else
-        std::cout << number << " is not a prime number.";
+        std::cout << n << " is not a prime number.";
 
     return 0;
 }
